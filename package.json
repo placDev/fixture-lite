@@ -1,0 +1,23 @@
+{
+  "name": "fixturies-manager",
+  "version": "0.0.1",
+  "description": "My awesome npm package",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "class-transformer": "^0.5.1",
+    "typeorm": "^0.3.20"
+  }
+}
