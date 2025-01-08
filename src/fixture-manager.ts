@@ -1,8 +1,5 @@
-import {DataSource, EntityManager} from "typeorm";
-import {faker, Faker} from "@faker-js/faker";
-import { plainToInstance} from "class-transformer";
-import * as path from 'path';
-import * as fs from 'fs';
+import {DataSource} from "typeorm";
+import {Faker} from "@faker-js/faker";
 import {FixtureGenerator} from "./generator/fixture-generator";
 import {FixtureFactories} from "./factories/fixture-factories";
 import {FixtureGeneratorDB} from "./generator/fixture-generator-db";
