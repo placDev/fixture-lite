@@ -28,8 +28,8 @@
   },
   "scripts": {
     "compile": "tsc",
-    "copy-readme": "cp ./../README.md dist/README.md",
-    "build": "npm run copy-readme && npm run compile",
+    "copy-readme": "cp ./../README.md ./dist/README.md",
+    "build": "npm run compile && npm run copy-readme",
     "test-build": "tsc && npm pack"
   },
   "devDependencies": {
