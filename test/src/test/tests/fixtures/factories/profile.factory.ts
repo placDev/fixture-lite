@@ -1,5 +1,5 @@
 import {ProfileEntity} from "../../../models/entities/profile.entity";
-import {FixtureManager} from "fixturies-manager";
+import {FixtureManager} from "fixture-lite";
 
 FixtureManager.factories.add(ProfileEntity, (faker) => {
     return {

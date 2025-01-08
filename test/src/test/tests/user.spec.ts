@@ -6,7 +6,7 @@ import {ProfileEntity} from "../models/entities/profile.entity";
 import { UserRepository } from '../repositories/user.repository';
 import {ProfileRepository} from "../repositories/profile.repository";
 import {UserService} from "../services/user.service";
-import {FixtureManager} from "fixturies-manager";
+import {FixtureManager} from "fixture-lite";
 import {generateTestingModule} from "../../../utils/tests/generate-testing-module.util";
 
 describe('UserService (Integration)', () => {
@@ -35,7 +35,6 @@ describe('UserService (Integration)', () => {
             return {};
         }, [1000]).many(5);
 
-        const t = 123;
         // const firstGenerator = FixtureManager.createGenerator();
         //
         // const t = await firstGenerator.entity(UserEntity).many(3);
