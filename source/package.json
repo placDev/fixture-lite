@@ -28,7 +28,7 @@
   },
   "scripts": {
     "compile": "tsc",
-    "copy-readme": "cp dist/README.md",
+    "copy-readme": "cp ./../README.md dist/README.md",
     "build": "npm run copy-readme && npm run compile",
     "test-build": "tsc && npm pack"
   },
