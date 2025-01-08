@@ -1,6 +1,6 @@
-# fixture-manager <!-- omit in toc -->
+# fixture-lite <!-- omit in toc -->
 
-**fixture-manager** A lightweight, flexible and powerful tool that allows you to conveniently create the data needed for unit and integration tests. The library has built-in integration with **typeorm**.
+**fixture-lite** A lightweight, flexible and powerful tool that allows you to conveniently create the data needed for unit and integration tests. The library has built-in integration with **typeorm**.
 
 # Documentation <!-- omit in toc -->
 
@@ -8,10 +8,10 @@
 
 # Installation
 
-Install `fixture-manager`:
+Install `fixture-lite`:
 
 ```sh
-npm i fixture-manager
+npm i fixture-lite
 ```
 
 Test
