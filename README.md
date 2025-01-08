@@ -1,6 +1,6 @@
-# fixtures-manager <!-- omit in toc -->
+# fixture-manager <!-- omit in toc -->
 
-**typeorm-fixture-builder** was created when I struggled with the current fixture solutions for typeorm avaible. They simply didn't fit my needs and/or weren't flexible enough. So I decided to create another one.
+**fixture-manager** A lightweight, flexible and powerful tool that allows you to conveniently create the data needed for unit and integration tests. The library has built-in integration with **typeorm**.
 
 # Documentation <!-- omit in toc -->
 
@@ -8,11 +8,10 @@
 
 # Installation
 
-Install `typeorm-fixture-builder` and it's peer dependencies. Usually you will install `typescript` as dev dependency:
+Install `fixture-manager`:
 
 ```sh
-yarn add typeorm typeorm-fixture-builder
-yarn add -D typescript
+npm i fixture-manager
 ```
 
-This will give you access to the `fixtures` cli utitlity as also to the programmatic api.
+Test
