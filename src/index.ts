@@ -1,3 +1,1 @@
-import * as fm from './fixture-manager';
-
-export default fm;
+export { FixtureManager } from './fixture-manager';
