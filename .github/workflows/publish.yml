@@ -18,17 +18,19 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Change directory to source
-        run: cd ./source
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd source
+          npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          cd source
+          npm run build  # замените на команду сборки вашего проекта
 
       - name: Publish to NPM
         run: |
+          cd source
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npm publish
         env:
