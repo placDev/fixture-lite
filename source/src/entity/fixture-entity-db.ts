@@ -5,6 +5,7 @@ import {FixtureGenerator} from "../generator/fixture-generator";
 import {FixtureEntityBase} from "./fixture-entity-base";
 import {plainToInstance} from "class-transformer";
 import {faker} from "@faker-js/faker";
+import {FactoryNotFound} from "../errors";
 
 export class FixtureEntityDB<T extends new (...args: any) => any> extends FixtureEntityBase<T> {
     private constructor(
@@ -46,7 +47,11 @@ export class FixtureEntityDB<T extends new (...args: any) => any> extends Fixtur
     }
 
     protected async createInstances() {
-        const factory = FixtureManager.factories.store.get(this.entity) as EntityFactory<T>;
+        const factory = FixtureManager.factories.store.get(this.entity);
+        if (!factory) {
+            throw new FactoryNotFound(`Factory for type ${this.entity.name} was not found`);
+        }
+
         const candidates: InstanceType<T>[] = [];
 
         const hasOptionItemIndexesToTransform = !!this.transformOptions.itemIndexesToTransform.length;
