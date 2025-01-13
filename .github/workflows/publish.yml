@@ -18,15 +18,30 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Save original package.json
+        run: |
+          cd sourceс
+          cp package.json package.json.bak
+
+      - name: Update version in package.json
+        run: |
+          node -e "let pkg=require('./package.json'); pkg.version='0.0.10'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
+
       - name: Install dependencies
         run: |
           cd source
           npm install
 
+      - name: Run your command
+        run: npm run test-build
+
+      - name: Restore original package.json
+        run: mv package.json.bak package.json
+
       - name: Build the project
         run: |
           cd source
-          npm run build  # замените на команду сборки вашего проекта
+          npm run build
 
       - name: Publish to NPM
         run: |
