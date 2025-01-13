@@ -20,7 +20,7 @@ jobs:
 
       - name: Save original package.json
         run: |
-          cd sourceс
+          cd source
           cp package.json package.json.bak
 
       - name: Update version in package.json
