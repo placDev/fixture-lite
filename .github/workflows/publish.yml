@@ -34,10 +34,14 @@ jobs:
           npm install
 
       - name: Run your command
-        run: npm run test-build
+        run: |
+          cd source
+          npm run test-build
 
       - name: Restore original package.json
-        run: mv package.json.bak package.json
+        run: |
+          cd source
+          mv package.json.bak package.json
 
       - name: Build the project
         run: |
