@@ -25,6 +25,7 @@ jobs:
 
       - name: Update version in package.json
         run: |
+          cd source
           node -e "let pkg=require('./package.json'); pkg.version='0.0.10'; require('fs').writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
 
       - name: Install dependencies
