@@ -38,7 +38,6 @@ describe('Testing the operation of fixture factories', () => {
       };
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     FixtureManager.factories.add(Second, async (faker, generator) => {
       const first = await generator.entity(First).single();
 
@@ -60,6 +59,18 @@ describe('Testing the operation of fixture factories', () => {
     expect(first.name).toEqual('Cat');
     expect(first.birthDate.getDate()).toEqual(new Date().getDate());
     expect(first.age).toEqual(11);
+  });
+
+  it('ert', async () => {
+    const test = await generator
+      .entity(First)
+      .transform((x) => {
+        x.age = 100;
+        return x;
+      })
+      .single();
+
+    const t = 123;
   });
 
   it(`should throw an exception 'Factory Not Found'`, async () => {
