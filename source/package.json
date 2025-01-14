@@ -1,6 +1,6 @@
 {
   "name": "fixture-lite",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A lightweight, flexible and powerful tool that allows you to conveniently create the data needed for unit and integration tests",
   "keywords": [
     "typeorm",
@@ -39,6 +39,6 @@
   "dependencies": {
     "@faker-js/faker": "^9.3.0",
     "class-transformer": "^0.5.1",
-    "typeorm": "^0.3.19"
+    "typeorm": "0.3.19"
   }
 }
