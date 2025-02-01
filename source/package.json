@@ -1,6 +1,6 @@
 {
   "name": "fixture-lite",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A lightweight, flexible and powerful tool that allows you to conveniently create the data needed for unit and integration tests",
   "keywords": [
     "typeorm",
@@ -9,6 +9,9 @@
     "universal",
     "test",
     "testing",
+    "unit",
+    "integration",
+    "e2e",
     "jest",
     "node",
     "nestjs",
