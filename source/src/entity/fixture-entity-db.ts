@@ -58,7 +58,7 @@ export class FixtureEntityDB<T extends new (...args: any) => any> extends Fixtur
         const isExistTransform = !!this.transformCallback;
 
         for (let i = 0; i < this.entityCount; i++) {
-            const needTransform = !hasOptionItemIndexesToTransform && this.transformOptions.itemIndexesToTransform.includes(i);
+            const needTransform = !hasOptionItemIndexesToTransform || (hasOptionItemIndexesToTransform && this.transformOptions.itemIndexesToTransform.includes(i));
             const instance = plainToInstance(this.entity, await factory(faker, FixtureGenerator.create()));
 
             candidates.push(isExistTransform ? needTransform ? await this.transformCallback(instance, this.generator) : instance : instance);
