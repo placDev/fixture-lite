@@ -6,13 +6,13 @@ The library can work without using any ORMs by creating objects of specified pro
 # Documentation <!-- omit in toc -->
 
 - [Installation](#installation)
-- [Simple using](#simpleUsing)
+- [Simple using](#simple-using)
 - [Glossary](#glossary)
 - [Factories](#factories)
 - [Generator](#generator)
 - [Transform](#transform)
-- [Use without a database](#withoutDatabase)
-- [Use with TypeORM](#simpleUsing)
+- [Use without a database](#without-database)
+- [Use with TypeORM](#simple-using)
 - [Examples](#examples)
 
 # Installation

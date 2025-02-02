@@ -1,17 +1,47 @@
-import { TestingModule } from '@nestjs/testing';
+import { Test, TestingModule } from '@nestjs/testing';
 import { DataSource } from 'typeorm';
-import { v4 as uuid } from 'uuid';
 import { UserEntity } from '../models/entities/user.entity';
 import { ProfileEntity } from '../models/entities/profile.entity';
-import { FixtureManager } from 'fixture-lite';
-import { generateTestingModule } from '../../../utils/tests/generate-testing-module.util';
+import { FixtureGeneratorDB, FixtureManager } from 'fixture-lite';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-describe('Testing the operation of fixture factories', () => {
+describe('...', () => {
   let connection: DataSource;
   let module: TestingModule;
+  let generator: FixtureGeneratorDB;
 
   beforeEach(async () => {
-    module = await generateTestingModule([UserEntity, ProfileEntity], []);
+    const entities = [ProfileEntity, UserEntity];
+    module = await Test.createTestingModule({
+      imports: [
+        TypeOrmModule.forRoot({
+          type: 'sqlite',
+          database: ':memory:',
+          entities,
+          synchronize: true,
+        }),
+        TypeOrmModule.forFeature(entities),
+      ],
+    }).compile();
+
+    connection = module.get(DataSource);
+    generator = await FixtureManager.createGenerator(connection);
+
+    await generator
+      .entity(UserEntity)
+      .transform((user) => {
+        user.name = 'Jack Sparrow';
+        user.profile.bio = 'Captain';
+        return user;
+      })
+      .save(1);
+  });
+
+  it('...', async () => {
+    const [savedUser] = await connection.getRepository(UserEntity).find();
+
+    expect(savedUser).toBeDefined();
+    expect(savedUser.name).toEqual('Jack Sparrow');
   });
 
   afterEach(async () => {
