@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "paths": {
+      "typeorm": ["node_modules/typeorm"]
+    },
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
